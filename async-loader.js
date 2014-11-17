@@ -17,7 +17,7 @@ function AsyncLoader(){
 			script.src = url;	
 		}else{
 			var script = document.createElement("link")
-  			script.setAttribute("rel", "stylesheet")
+  			script.setAttribute("rel", "StyleSheet")
   			script.setAttribute("type", "text/css")
   			script.setAttribute("href", url)
 		}
@@ -48,7 +48,9 @@ function AsyncLoader(){
 }
 var al = new AsyncLoader();
 
-al.insert("http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", "js");
-al.insert("http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js", "js");
+al.insert({url:"http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css", type: "css"});
+
+al.insert({url:"http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", type: "js"});
+al.insert({url:"http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js", type: "js"});
 
 al.load();
